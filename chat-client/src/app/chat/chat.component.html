@@ -1,9 +1,14 @@
 <div class="container-fluid" id="chat">
     <ul id="messages">
-        <li *ngFor="let message of messages"> {{ message }}</li>
+        <li *ngFor="let message of messages">
+            <div class="card card-message">
+                {{ message.time }}
+                {{ message.text }}
+            </div>
+        </li>
     </ul>
     <div>
-        <input (input)="updateCurrentMessage($event)" id="message" type="text">
+        <input (input)="updateCurrentMessage($event)" value="{{this.currentMessage}}" id="message" type="text">
         <button (click)="handleSubmitNewMessage()">Send</button>
     </div>
 </div>

@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import { Message } from '../../interfaces/message';
 
 @Component({
   selector: 'app-chat',
@@ -6,9 +7,8 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
-  currentMessage: string = '';
-
-  messages: string[] = [];
+  currentMessage: string = '' ;
+  messages: Message[] = [];
 
   constructor() { }
 
@@ -17,10 +17,20 @@ export class ChatComponent implements OnInit {
 
   updateCurrentMessage(event: any) {
     this.currentMessage = event.target.value;
-    console.log(this.currentMessage);
   }
 
   handleSubmitNewMessage() {
-    this.messages.push(this.currentMessage);
+    const messageObj: Message = {time: this.getTime(), text: this.currentMessage}
+    this.messages.push(messageObj);
+    this.currentMessage = '';
+  }
+
+  getTime(): string {
+    const now = new Date();
+    return this.stringifyTime(now);
+  }
+
+  stringifyTime(date: Date): string {
+    return `${date.getHours()}:${date.getMinutes()}`;
   }
 }
