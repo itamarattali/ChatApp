@@ -5,9 +5,10 @@
 }
 
 #loginCard {
+    margin-top: 35px;
     background-color:whitesmoke;
     width: 350px;
-    height: 280px;
+    height: 165px;
     border-radius: 4%;
 }
 

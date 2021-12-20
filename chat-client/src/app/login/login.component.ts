@@ -15,10 +15,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onNoAccount() {
-    this.router.navigate(['../signup'], {relativeTo: this.route});
-  }
-
   onSubmit(form: HTMLFormElement) {
     this.router.navigate(['../chat'], {relativeTo: this.route})
   }
