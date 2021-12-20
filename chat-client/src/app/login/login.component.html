@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="container-fluid" id="login">
+    <h1 class="text-center" id="loginTitle">Login</h1>
+    <div class="card mx-auto" id="loginCard">
+        <form (ngSubmit)="this.onSubmit(f)" #f>
+            <div class="form-group text-center">
+                <label for="username">username</label>
+                <input type="text" 
+                id="username" 
+                class="form-control" 
+                name="username"
+                ngModel
+                placeholder="enter username" required>
+            </div>    
+            <div class="form-group text-center">
+                <label for="password">password</label>
+                <input type="password"
+                id="password" 
+                class="form-control" 
+                name="password"
+                ngModel
+                placeholder="enter password" required>
+            </div>
+            <button class="btn btn-success" type="submit">login</button>
+            <p (click)="this.onNoAccount()">don't have an account yet? sign up!</p>
+        </form>
+    </div>
+</div>

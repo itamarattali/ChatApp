@@ -1,0 +1,46 @@
+#signUpTitle {
+    font-family: "arial";
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#signUpCard {
+    background-color:whitesmoke;
+    width: 350px;
+    height: 280px;
+    border-radius: 4%;
+}
+
+.form-group {
+    background-color: transparent;
+}
+
+label {
+    font-family: 'arial';
+    font-size: 20px;
+}
+
+.form-group {
+    margin-top: 10px;
+    margin-bottom: 14px;
+}
+
+form {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.btn-primary {
+    margin-top: 5px;
+}
+
+p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+p {
+    margin-top: 10px;
+    color: blue;
+    text-align: center;
+}

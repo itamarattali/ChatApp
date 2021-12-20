@@ -1,1 +1,27 @@
-<p>signup works!</p>
+<div class="container-fluid" id="login">
+    <h1 class="text-center" id="signUpTitle">Sign Up</h1>
+    <div class="card mx-auto" id="signUpCard">
+        <form (ngSubmit)="this.onSubmit(f)" #f>
+            <div class="form-group text-center">
+                <label for="username">username</label>
+                <input type="text" 
+                id="username" 
+                class="form-control" 
+                name="username"
+                ngModel
+                placeholder="enter username" required>
+            </div>    
+            <div class="form-group text-center">
+                <label for="password">password</label>
+                <input type="password"
+                id="password" 
+                class="form-control" 
+                name="password"
+                ngModel
+                placeholder="enter password" required>
+            </div>
+            <button class="btn btn-primary" type="submit">sign up</button>
+            <p (click)="this.onHasAccount()">I have an account, log in</p>
+        </form>
+    </div>
+</div>
