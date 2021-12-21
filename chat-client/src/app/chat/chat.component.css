@@ -1,8 +1,26 @@
 .card-message {
     width: 350px;
     background-color: whitesmoke;
+    margin-bottom: 15px;
 }
 
-#message {
-    align-content: center;
+#messageInput {
+    background-color: whitesmoke;
+    border-color: black;
+    width: 300px;
+}
+
+.message-text {
+    margin-left: 4px;
+    margin-top: -15px;
+}
+
+#nameAndTime {
+    margin-left: 4px;
+    font-size: 13px;
+}
+
+#sendButton {
+    background-color: lightgreen;
+    border-color: transparent;
 }

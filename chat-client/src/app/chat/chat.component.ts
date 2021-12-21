@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import { Message } from '../../interfaces/message';
-import { LoginService } from '../login.service';
+import { LoginService } from '../services/login.service';
 import * as moment from 'moment';
 
 @Component({
@@ -31,13 +31,7 @@ export class ChatComponent implements OnInit {
   }
 
   getTime(): string {
-    const now = moment(new Date()).format('HH:mm');
+    const now = moment().format('HH:mm');
     return now.toString();
-  }
-
-  stringifyTime(date: Date): string {
-    const hours = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
-    const minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes(); 
-    return `${hours}:${minutes}`;
   }
 }
