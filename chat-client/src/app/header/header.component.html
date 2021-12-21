@@ -6,5 +6,12 @@
         <div class="col">
             <img id="chatIcon" src="../../assets/images/chatIcon.png">
         </div>
+        <div class="col-8"></div>
+        <div class="col-1">
+            <button class="btn btn-danger" 
+            id="logoutButton" 
+            [disabled]="isLogoutDisabled()"
+            (click)="handleLogout()">logout</button>
+        </div>
     </div>
 </div>
