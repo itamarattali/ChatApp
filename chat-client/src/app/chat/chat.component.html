@@ -2,6 +2,7 @@
     <ul id="messages">
         <li *ngFor="let message of messages">
             <div class="card card-message">
+                {{ message.name }}
                 {{ message.time }}
                 {{ message.text }}
             </div>
