@@ -8,7 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { ChatComponent } from './chat/chat.component';
 import { LoginService } from './services/login.service';
-import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
+import { ChatService } from './services/chat.service';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {}};
 
@@ -25,7 +26,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {}};
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

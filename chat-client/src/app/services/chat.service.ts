@@ -11,6 +11,8 @@ export class ChatService {
     constructor(private socket: Socket) { }
 
     sendMessage(message: Message) {
+        console.log(1);
+        
         this.socket.emit('sendMessage', message);
     }
 

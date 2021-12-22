@@ -25,16 +25,11 @@ export class ChatComponent implements OnInit {
     })
   }
 
-  // updateCurrentMessage(event: any) {
-  //   this.currentMessage = event.target.value;
-  // }
-
-  // handleSubmitNewMessage() {
-  //   const messageObj: Message = {time: this.getTime(), 
-  //     text: this.currentMessage, name: this.name}
-  //   this.messages.push(messageObj);
-  //   this.currentMessage = '';
-  // }
+  sendMessage() {
+    const message: Message = {time: this.getTime(), text: this.currentMessage, name: this.name};
+    this.currentMessage = '';
+    this.chatService.sendMessage(message);
+  }
 
   getTime(): string {
     const now = moment().format('HH:mm');
