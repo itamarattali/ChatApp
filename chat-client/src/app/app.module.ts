@@ -1,32 +1,33 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+import { UserService } from './services/user.service';
+import { SignInComponent } from './sign-in/sign-in.component';
 import { ChatComponent } from './chat/chat.component';
-import { LoginService } from './services/login.service';
-import { ChatService } from './services/chat.service';
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-
-const config: SocketIoConfig = { url: 'http://localhost:3000', options: {}};
+import { ChatNavbarComponent } from './chat-navbar/chat-navbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     LoginComponent,
+    SignInComponent,
     ChatComponent,
+    ChatNavbarComponent,
   ],
   imports: [
-    SocketIoModule.forRoot(config),
-    FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgbModule,
   ],
-  providers: [LoginService, ChatService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

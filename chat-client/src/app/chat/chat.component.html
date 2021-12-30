@@ -1,15 +1,28 @@
-<div class="container-fluid" id="chat">
-    <div class="text-center">
-        <h1>Hello {{name}}</h1>
-    </div>
-    <div id="messages" class="row justify-content-center" *ngFor="let message of messages">
-        <div class="card card-message">
-            <p id="nameAndTime">{{ message.name }} {{ message.time }}</p>
-            <div class="message-text">{{ message.text }}</div>
+<div class="container-fluid">
+    
+    <div class="row">
+        <div class="col-3">
+            <app-chat-navbar></app-chat-navbar>
         </div>
-    </div>
-    <div class="row justify-content-center" id="sendBar">
-        <input [(ngModel)]="currentMessage" id="messageInput" type="text">
-        <button (click)="this.sendMessage()" id="sendButton">Send</button>
+        <div class="col-9 container-fluid" id="chatArea">
+            <div class="message-area container-fluid">
+                <div class="row chat-top-row">
+                    
+                </div>
+            </div>
+            <div [formGroup]="inputMessage" class="container-fluid input-area">
+                <div class="row">
+                    <div class="col-11">
+                        <input formControlName="message" 
+                        type="text" 
+                        placeholder="Type a message" 
+                        class="input-message">
+                    </div>
+                    <div class="col-1">
+                        <img src="../../assets/images/SendIcon.png" id="sendIcon">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

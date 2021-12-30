@@ -48,13 +48,7 @@ button:focus {
     outline: none;
 }
 
-#errorMessage {
-    margin-top: -13px;
-    color: red;
-    font-size: 12px;
-}
-
-#signInText {
+#logInText {
     margin-top: 7px;
     font-size: 12px;
     margin-bottom: 2px;
@@ -68,4 +62,10 @@ button:focus {
 #blueText:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+
+#errorMessage {
+    margin-top: -13px;
+    color: red;
+    font-size: 12px;
 }

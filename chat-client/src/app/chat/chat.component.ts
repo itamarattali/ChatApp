@@ -1,9 +1,6 @@
-import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import { Message } from '../../interfaces/message';
-import { LoginService } from '../services/login.service';
-import * as moment from 'moment';
-import { Observable } from 'rxjs';
-import { ChatService } from '../services/chat.service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Chat } from '../interfaces/chat';
 
 @Component({
   selector: 'app-chat',
@@ -11,28 +8,18 @@ import { ChatService } from '../services/chat.service';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
-  name: string = '';
-  currentMessage: string = '' ;
-  messages: Message[] = [];
-  newMessage$: Observable<Message>;
 
-  constructor(private loginService: LoginService, private chatService: ChatService) { }
+  isChatSelected: boolean = false;
+  chatRecipient: Chat = {messageList: [], usersWithAccess: []};
+
+  inputMessage = this.formBuilder.group({
+    message: '',
+  })
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.name = this.loginService.getName();
-    this.chatService.getNewMessage().subscribe((message: Message) => {
-      this.messages.push(message);
-    })
   }
 
-  sendMessage() {
-    const message: Message = {time: this.getTime(), text: this.currentMessage, name: this.name};
-    this.currentMessage = '';
-    this.chatService.sendMessage(message);
-  }
-
-  getTime(): string {
-    const now = moment().format('HH:mm');
-    return now.toString();
-  }
+  // TODO how to check what chat i selected
 }
